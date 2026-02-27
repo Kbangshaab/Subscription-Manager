@@ -1,0 +1,68 @@
+body {
+    background-color: lightblue;}
+
+table {
+    width: 53%;
+    border-collapse: collapse; /* This removes the double lines */
+    margin-top: 20px;
+    font-family: sans-serif;
+    background-color: white !important;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(-4px) scale(1.02); }
+    50% { transform: translateY(-7px) scale(1.02); } /* Moves a bit higher */
+    100% { transform: translateY(-4px) scale(1.02); }
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+tr:hover td {
+    background-color: white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 99;
+    border-color: #28a745;
+    cursor: pointer;
+
+    /* This triggers the animation */
+    animation: floatUp 1.5s ease-in-out infinite;
+}
+
+th {
+    background-color: gray;
+}
+
+button {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.form-container {
+    width: 50%;
+    background-color: gray;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+}
+
+#add-sub-btn{
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
