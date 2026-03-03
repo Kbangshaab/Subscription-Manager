@@ -3,7 +3,7 @@ body {
 
 table {
     width: 53%;
-    border-collapse: collapse; /* This removes the double lines */
+    border-collapse: separate;
     margin-top: 20px;
     font-family: sans-serif;
     background-color: white !important;
@@ -23,6 +23,7 @@ th, td {
     transition: background-color 0.3s ease;
 }
 
+<<<<<<< Updated upstream
 tr:hover td {
     background-color: white;
     box-shadow: 0 15px 30px rgba(0,0,0,0.25);
@@ -33,6 +34,38 @@ tr:hover td {
 
     /* This triggers the animation */
     animation: floatUp 1.5s ease-in-out infinite;
+=======
+@keyframes floatAndGlow {
+    0% {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.2), 0 0 0 2px black;  
+    }
+    50% {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 20px 35px rgba(0,0,0,0.3), 0 0 0 4px black;
+    }
+    100% {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.2), 0 0 0 2px black;
+    }
+}
+
+tr:hover td {
+    background-color: white;
+    position: relative;
+    z-index: 99;
+    cursor: pointer;
+    border-color: black;
+    
+    animation: floatAndGlow 1.5s ease-in-out infinite;
+}
+
+td {
+    background-color: white;
+    border: 2px solid black; 
+    padding: 12px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+>>>>>>> Stashed changes
 }
 
 th {
