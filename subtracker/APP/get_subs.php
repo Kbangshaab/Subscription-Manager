@@ -1,18 +1,29 @@
 <?php
-include 'config.php';
+session_start();
+// Make sure this matches your file name in the APP folder
+require_once 'db_config.php'; 
+
 header('Content-Type: application/json');
 
-// Using lowercase 'subscriptions' to match your CREATE TABLE
-$sql = "SELECT id, name, renew, price FROM subscriptions";
-$result = $conn->query($sql);
-
-$data = array();
-if ($result && $result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $data[] = $row;
-    }
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    echo json_encode([]);
+    exit();
 }
 
-echo json_encode($data);
-$conn->close();
+try {
+    $userId = $_SESSION['user_id'];
+    
+    // Prepare the SQL to fetch only THIS user's subscriptions
+    $stmt = $pdo->prepare("SELECT id, name, renew, price FROM subscriptions WHERE user_id = ?");
+    $stmt->execute([$userId]);
+    
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    echo json_encode($data);
+
+} catch (PDOException $e) {
+    // If there is a database error, send it back so we can see it in the console
+    echo json_encode(["error" => $e->getMessage()]);
+}
 ?>

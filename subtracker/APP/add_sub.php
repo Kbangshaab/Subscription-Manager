@@ -1,19 +1,19 @@
 <?php
-include 'config.php';
+session_start();
+require_once 'db_config.php';
 
-// Get data from the JavaScript request
-$name = $_POST['name'];
-$renew = $_POST['renew'];
-$price = $_POST['price'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
+    $userId = $_SESSION['user_id'];
+    $name = $_POST['name'];
+    $renew = $_POST['renew'];
+    $price = $_POST['price'];
 
-// Insert into your 'subscriptions' table
-$sql = "INSERT INTO subscriptions (name, renew, price) VALUES ('$name', '$renew', '$price')";
-
-if ($conn->query($sql) === TRUE) {
-    echo json_encode(["status" => "success"]);
-} else {
-    echo json_encode(["status" => "error", "message" => $conn->error]);
+    try {
+        $stmt = $pdo->prepare("INSERT INTO subscriptions (user_id, name, renew, price) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$userId, $name, $renew, $price]);
+        echo "Success";
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
 }
-
-$conn->close();
 ?>

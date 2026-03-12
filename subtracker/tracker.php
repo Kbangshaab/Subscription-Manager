@@ -1,15 +1,37 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Subscription Manager</title>
-    <link rel="stylesheet" href="./CSS/Style.css?v=1"></head>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
 <body>
 
 <h1>Subscription Manager</h1>
-<p>Visual look at your subscriptions. It is not made in any currency so the price you choose are in what currency you want.</p>
+<p>Visual look at your subscriptions. It is not made in any currency, so the price you choose are in what currency you want.</p>
 
 <div class="form-container">
+    <label for="currency-selector">Choose Currency:</label>
+    <select id="currency-selector">
+        <option value="1">DKK (kr)</option>
+        <option value="0.13">EUR (€)</option>
+        <option value="0.14">USD ($)</option>
+        <option value="0.11">GBP (£)</option>
+    </select>
+<div class="navigation-header">
+    <a href="menu.php" class="back-btn">
+        <span class="arrow">←</span> Back to Menu
+    </a>
+</div>
     <h3>Add New Subscription</h3>
     <input type="text" id="sub-name" placeholder="Subscription Name (e.g. Spotify)">
     <input type="text" id="sub-renew" placeholder="Renewal (e.g. Monthly)">
@@ -17,7 +39,8 @@
     <button id="add-sub-btn">Add Subscription</button>
 </div>
 
-<table border="1">
+
+<table>
     <thead>
     <tr>
         <th>Subscription</th>

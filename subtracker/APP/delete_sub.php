@@ -1,18 +1,27 @@
 <?php
-include 'config.php';
+session_start();
+require_once __DIR__ . '/db_config.php';
 
-if (isset($_POST['id'])) {
-    $id = $_POST['id'];
+// 1. Check if user is logged in
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
+    
+    $subId = $_POST['id'];
+    $userId = $_SESSION['user_id'];
 
-    // Delete the row where the ID matches
-    $sql = "DELETE FROM subscriptions WHERE id = $id";
+    try {
+        // 2. Security: Only delete if the ID matches AND it belongs to this User
+        $stmt = $pdo->prepare("DELETE FROM subscriptions WHERE id = ? AND user_id = ?");
+        $stmt->execute([$subId, $userId]);
 
-    if ($conn->query($sql) === TRUE) {
-        echo json_encode(["status" => "success"]);
-    } else {
-        echo json_encode(["status" => "error"]);
+        if ($stmt->rowCount() > 0) {
+            echo "Deleted";
+        } else {
+            echo "Not found or unauthorized";
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
     }
+} else {
+    echo "Unauthorized";
 }
-
-$conn->close();
 ?>
