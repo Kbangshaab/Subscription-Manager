@@ -1,20 +1,19 @@
 <?php
 session_start();
+// Security: Redirect to login if they aren't logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: index.php");
+    header("Location: login.php");
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - SubTracker</title>
-    <link rel="stylesheet" href="CSS/Style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Menu - SubTracker</title>
+    <link rel="stylesheet" href="CSS/Style.css?v=1.3">
 </head>
-
 <body class="dashboard-bg">
     <div class="menu-container">
         <header class="menu-header">
@@ -32,11 +31,20 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="card-arrow">→</div>
             </a>
 
-            <a href="#" class="glass-card">
+            <a href="account_settings.php" class="glass-card">
                 <div class="card-icon">⚙️</div>
                 <div class="card-content">
                     <h3>Account Settings</h3>
-                    <p>Manage your profile, currency, and security.</p>
+                    <p>Manage your profile, username, and security.</p>
+                </div>
+                <div class="card-arrow">→</div>
+            </a>
+
+            <a href="about.php" class="glass-card">
+                <div class="card-icon">❓</div>
+                <div class="card-content">
+                    <h3>How it Works</h3>
+                    <p>Learn how to get the most out of your tracker.</p>
                 </div>
                 <div class="card-arrow">→</div>
             </a>

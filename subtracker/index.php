@@ -1,36 +1,41 @@
-<?php
-session_start();
-// If user is already logged in, send them straight to the menu
-if(isset($_SESSION['user_id'])) {
-    header("Location: menu.php");
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login - SubTracker</title>
-    <link rel="stylesheet" href="./CSS/Style.css?v=21">
+    <title>SubTracker - Manage your Subscriptions</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="form-container" style="margin-top: 100px; max-width: 400px;">
-        <h2 style="text-align: center;">Login</h2>
-        <form action="APP/login_process.php" method="POST">
-            <input type="text" name="username" placeholder="Username" required style="width:100%; margin-bottom:10px; padding:10px;">
-            <input type="password" name="password" placeholder="Password" required style="width:100%; margin-bottom:20px; padding:10px;">
-            <button type="submit" id="add-sub-btn">Sign In</button>
-        </form>
-    <div style="text-align: center; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
-        <p style="font-size: 0.9rem; color: #64748b;">
-            New here? <a href="signup.php" style="color: #2563eb; text-decoration: none; font-weight: 600;">Create an account</a>
-        </p>
-    </div>
-        <?php 
-        if(isset($_GET['error'])) { 
-            echo '<p style="color:red; text-align:center;">Invalid Login!</p>'; 
-        } 
-        ?>
+<body class="dashboard-bg">
+    <div class="landing-container">
+        <header class="hero-section">
+            <div class="logo">📊 SubTracker</div>
+            <h1>Stop losing money on <span>forgotten subscriptions.</span></h1>
+            <p>The simplest way to track, manage, and optimize your monthly recurring payments.</p>
+            
+            <div class="hero-buttons">
+                <a href="login.php" class="btn-primary">Login to Dashboard</a>
+                <a href="signup.php" class="btn-secondary">Create Free Account</a>
+            </div>
+        </header>
+
+        <section class="features-grid">
+            <div class="feature-card">
+                <span>🔒</span>
+                <h3>Secure Storage</h3>
+                <p>Your data is tied to your private account and encrypted.</p>
+            </div>
+            <div class="feature-card">
+                <span>🌍</span>
+                <h3>Currency Support</h3>
+                <p>Track in DKK, USD, or EUR with real-time conversion.</p>
+            </div>
+            <div class="feature-card">
+                <span>📉</span>
+                <h3>Visual Analytics</h3>
+                <p>See exactly where your money goes every single month.</p>
+            </div>
+        </section>
     </div>
 </body>
 </html>

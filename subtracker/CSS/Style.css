@@ -254,3 +254,105 @@ input:focus {
     background: #dbeafe;
     transform: translateX(-3px);
 }
+
+.glass-card.no-hover:hover {
+    transform: none;
+    cursor: default;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.no-hover .card-content p {
+    color: #475569;
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+.landing-container {
+    max-width: 1000px;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+/* Primary Button (Login) */
+.btn-primary {
+    background: #2563eb;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s;
+}
+
+/* Secondary Button (Signup) */
+.btn-secondary {
+    background: white;
+    color: #2563eb;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.feature-card span { font-size: 2rem; }
+.feature-card h3 { margin: 15px 0 10px; }
+.feature-card p { color: #64748b; font-size: 0.9rem; }
+
+.danger-zone {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #fee2e2;
+    text-align: center;
+}
+
+.btn-danger {
+    background-color: #fee2e2;
+    color: #ef4444;
+    border: 1px solid #fca5a5;
+}
+
+.btn-danger:hover {
+    background-color: #ef4444;
+    color: white;
+}
