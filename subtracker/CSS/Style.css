@@ -1,6 +1,5 @@
-/* 1. Global Refinements */
 body {
-    background-color: #f8fafc; /* Softer off-white */
+    background-color: #f8fafc; 
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     color: #1e293b;
     line-height: 1.5;
@@ -10,11 +9,10 @@ body {
     align-items: center;
 }
 
-/* 2. Modern Form Container */
 .form-container {
     width: 100%;
     max-width: 600px;
-    background-color: white; /* White card, not gray */
+    background-color: white;
     padding: 32px;
     border-radius: 16px;
     margin-bottom: 30px;
@@ -22,12 +20,11 @@ body {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* 3. Professional Table Design */
 table {
     width: 100%;
     max-width: 900px;
     border-collapse: separate;
-    border-spacing: 0 12px; /* Gaps for the lift effect */
+    border-spacing: 0 12px; 
     margin-top: 20px;
 }
 
@@ -48,11 +45,9 @@ td {
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Caps off the rounded corners of the rows */
 td:first-child { border-left: 1px solid #e2e8f0; border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
 td:last-child { border-right: 1px solid #e2e8f0; border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
 
-/* 4. The Animation Logic */
 @keyframes floatWithBorders {
     0% { transform: translateY(-4px) scale(1.01); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
     50% { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
@@ -64,14 +59,13 @@ tr:hover td {
     position: relative;
     z-index: 10;
     cursor: pointer;
-    border-color: #2563eb; /* Blue border on hover */
+    border-color: #2563eb; 
     animation: floatWithBorders 1.5s ease-in-out infinite;
 }
 
-/* 5. Buttons */
 button {
     cursor: pointer;
-    background-color: #ef4444; /* Modern Red */
+    background-color: #ef4444; 
     color: white;
     border: none;
     padding: 8px 16px;
@@ -83,8 +77,8 @@ button {
 button:hover { opacity: 0.8; }
 
 #add-sub-btn {
-    background-color: #2563eb; /* Modern Blue */
-    width: 100%; /* Makes the add button feel more substantial */
+    background-color: #2563eb; 
+    width: 100%; 
     padding: 12px;
     margin-top: 10px;
 }
@@ -125,7 +119,6 @@ input:focus {
     outline: none;
 }
 
-/* Background with a soft mesh gradient */
 .dashboard-bg {
     background: radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.1) 0, transparent 50%),
     radial-gradient(at 100% 0%, rgba(239, 68, 68, 0.05) 0, transparent 50%),
@@ -155,7 +148,6 @@ input:focus {
     color: #2563eb;
 }
 
-/* The Glass Cards */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -220,7 +212,6 @@ input:focus {
     transform: translateX(5px);
 }
 
-/* Special styling for logout */
 .logout-card:hover {
     border-color: #ef4444;
 }
@@ -294,7 +285,6 @@ input:focus {
     margin-bottom: 80px;
 }
 
-/* Primary Button (Login) */
 .btn-primary {
     background: #2563eb;
     color: white;
@@ -305,7 +295,6 @@ input:focus {
     transition: transform 0.2s;
 }
 
-/* Secondary Button (Signup) */
 .btn-secondary {
     background: white;
     color: #2563eb;

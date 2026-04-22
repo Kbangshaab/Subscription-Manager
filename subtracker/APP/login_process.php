@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // 2. Check if user exists and password is correct
     if ($db_user && password_verify($pass, $db_user['password'])) {
-        // SUCCESS: Create the session wristband
         $_SESSION['user_id'] = $db_user['id'];
         $_SESSION['username'] = $db_user['username'];
         
