@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "root"; 
-$dbname = "subtracker_db"; // Ensure this matches your DB name in Rider
+$dbname = "subtracker_db";
 $port = 8889; 
 
 try {

@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9b764baf-fb93-4b75-b13e-a3aa7b689084" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subtracker/APP/login_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/subtracker/APP/login_process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subtracker/CSS/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/subtracker/CSS/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subtracker/APP/db_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/subtracker/APP/db_config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subtracker/APP/get_subs.php" beforeDir="false" afterPath="$PROJECT_DIR$/subtracker/APP/get_subs.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +22,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -66,7 +66,8 @@
       <workItem from="1772178802519" duration="46000" />
       <workItem from="1772179056927" duration="22005000" />
       <workItem from="1774810098821" duration="1405000" />
-      <workItem from="1775650196453" duration="3185000" />
+      <workItem from="1775650196453" duration="3252000" />
+      <workItem from="1777360211789" duration="5556000" />
     </task>
     <servers />
   </component>

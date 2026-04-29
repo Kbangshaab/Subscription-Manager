@@ -1,6 +1,5 @@
 <?php
 session_start();
-// Make sure this matches your file name in the APP folder
 require_once 'db_config.php'; 
 
 header('Content-Type: application/json');
